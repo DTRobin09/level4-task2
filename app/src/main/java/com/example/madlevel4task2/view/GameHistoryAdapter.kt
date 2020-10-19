@@ -14,7 +14,7 @@ class GameHistoryAdapter(private val games: List<Game>) : RecyclerView.Adapter<G
 
         val binding = GameBinding.bind(itemView)
 
-        fun databind(game: Game) {
+        fun bind(game: Game) {
             binding.tvDate.text = game.gameDate
             binding.tvMatchResult.text = game.gameResult
             when (game.computerChoice) {
@@ -50,6 +50,6 @@ class GameHistoryAdapter(private val games: List<Game>) : RecyclerView.Adapter<G
      * Called by RecyclerView to display the data at the specified position.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.databind(games[position])
+        holder.bind(games[position])
     }
 }
