@@ -8,11 +8,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.madlevel4task2.R
+import com.example.madlevel4task2.model.Game
+import com.example.madlevel4task2.repository.GameRepository
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class GameHistoryFragment : Fragment() {
+
+    private lateinit var gameRepository: GameRepository
+
+    private var gamesList = arrayListOf<Game>()
+    private var gameHistoryAdapter = GameHistoryAdapter(gamesList)
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
